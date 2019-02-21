@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+	char shape;
+	float figure[10][4];
+	int number=0;
+	while(cin>>shape)
+	{
+		if(shape=='r')
+		{
+			cin>>figure[number][0]>>figure[number][1]>>figure[number][2]>>figure[number][3];
+			number+=1;
+		}
+		else
+			break;
+	}
+	float x,y,eof=9999.9;
+	int point=0;
+	while(cin>>x>>y)
+	{
+		bool pointinfigure=false;
+		if(x==eof&&y==eof)
+			break;
+		point++;
+		for(int i=0;i<number;i++)
+		{
+			if(x>figure[i][0]&&x<figure[i][2]&&y<figure[i][1]&&y>figure[i][3])
+			{
+				cout<<"Point "<<point<<" is contained in figure "<<i+1<<endl;
+				pointinfigure=true;
+			}
+		}
+		if(!pointinfigure)
+			cout<<"Point "<<point<<" is not contained in any figure"<<endl;
+	}
+}
