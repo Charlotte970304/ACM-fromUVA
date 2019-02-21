@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+unsigned int reverse(unsigned int zheng){
+
+	unsigned int fang=0;
+	while(zheng){	
+		fang=fang*10+zheng%10;
+		zheng/=10;
+	}
+	return fang;}
+
+int main()
+{
+	int test;
+	cin>>test;
+	while(test--){
+		unsigned int number,reverse_number,add=0;
+		cin>>number;
+		do{	
+			number=number+reverse(number);
+			add++;
+		}while(number!=reverse(number));
+		cout<<add<<" "<<number<<endl;
+	}
+}
