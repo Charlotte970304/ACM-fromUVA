@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	long t,s;
+	cin>>t;
+	while(t--)
+	{
+		float sum=0.0;
+		cin>>s;
+		unsigned long long i=(s+1)*(s+1)-1;
+		cout<<i<<endl;
+	}
+}
