@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int n1,n2;
+	while(cin>>n1>>n2)
+	{
+		if(n1==0&&n2==0)
+		break;
+		
+		int carry=0,c=0;
+		while(n1!=0||n2!=0)
+		{
+			if(n1%10+n2%10+c>9)
+			{
+				carry+=1;
+				c=1;
+			}
+			else
+				c=0;
+			n1/=10;
+			n2/=10;
+		}
+		if(n1%10+c>9||n2%10+c>9)
+			carry+=1;
+		if(carry==0)
+			cout<<"No carry operation."<<endl;		
+		else if(carry==1)
+			cout<<"1 carry operation."<<endl;		
+		else
+			cout<<carry<<" carry operations."<<endl;
+	}	
+}
+
+//第一次嘗試不用字串來解這種題目
+//其實我也許是腦袋壞掉了
