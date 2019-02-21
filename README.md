@@ -1,5 +1,5 @@
 # ACM-one-star
-@Uva
+@UVa
 
 
 c++練習地
