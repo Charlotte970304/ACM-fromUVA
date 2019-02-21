@@ -1,5 +1,7 @@
 # ACM-one-star
-from uva
+@Uva
+
+
 c++練習地
 
 程式紀錄
