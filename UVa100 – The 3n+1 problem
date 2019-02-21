@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+int compute(int n)
+{
+	int cyclelength=1;
+	while(n!=1)
+	{
+		if(n%2==1)
+			n=3*n+1;
+		else
+			n/=2;
+		cyclelength++;
+	}
+	return cyclelength;
+}
+
+
+int main(){
+	int start,end;
+	while(cin>>start>>end)
+	{
+		int cyclelength=0,temp;
+		if(start<end)
+		{
+			for(int i=start;i<=end;i++)
+			{
+				temp=compute(i);
+				if(temp>cyclelength)
+					cyclelength=compute(i);
+			}	
+		}
+		else
+		{
+			for(int i=start;i>=end;i--)
+			{
+				temp=compute(i);
+				if(temp>cyclelength)
+					cyclelength=compute(i);
+			}	
+		}
+		cout<<start<<" "<<end<<" "<<cyclelength<<endl;
+	}
+}
+
+//C++(0.370)
+//如果將compute function直接寫在main function內的話
+//速度可達到(0.28)
