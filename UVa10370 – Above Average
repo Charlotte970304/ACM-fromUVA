@@ -1,0 +1,30 @@
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+	int tc;
+	cin>>tc;
+	while(tc--)
+	{
+		int people;
+		cin>>people;
+		
+		int grade[people],sum=0;
+		for(int i=0;i<people;i++)
+		{
+			cin>>grade[i];
+			sum+=grade[i];
+		}
+		float average=(float)sum/people;
+		int count=0;
+		for(int i=0;i<people;i++)
+		{
+			if(grade[i]>average)
+			count+=1;
+		}
+		cout<<fixed<<setprecision(3)<<(float)count/people*100<<'%'<<endl;
+	}
+}
