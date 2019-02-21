@@ -1,0 +1,25 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main(){
+	int H,M;
+	float hourangle,minuteangle,angle;
+	char nocare;
+	while(cin>>H>>nocare>>M)
+	{
+		angle=0;
+		if(H==0&&M==0)
+			break;
+		minuteangle=6*M;
+		hourangle=30*H+0.5*M;
+		angle=hourangle-minuteangle;
+		if(angle<0&&angle>-180)
+			angle=-angle;
+		else if(angle<-180&&angle>-360)
+			angle+=360;
+		else if(angle>180&&angle<=360)
+			angle=360-angle;
+		cout<<fixed<<setprecision(3)<<angle<<endl;
+	}
+}
