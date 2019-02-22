@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int n,R,comeback;
+	while(cin>>n>>R)
+	{
+		bool allcomeback=true;
+		int volunteer[n+1]={0};
+		for(int i=1;i<=R;i++)
+		{
+			cin>>comeback;
+			volunteer[comeback]=1;
+		}
+		for(int i=1;i<=n;i++)
+		{
+			if(volunteer[i]==0)
+			{
+				cout<<i<<' ';
+				allcomeback=false;
+			}
+		}
+		if(allcomeback)
+		cout<<'*';
+		cout<<endl;
+		
+	}
+}
