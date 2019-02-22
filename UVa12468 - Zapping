@@ -1,0 +1,16 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int from,to;
+	while(cin>>from>>to)
+	{
+		if(from==-1&&to==-1)
+		break;
+		int turn=abs(to-from);
+		turn=((turn<=50)?turn:(100-turn));
+		cout<<turn<<endl;
+	}
+}
