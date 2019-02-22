@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	long long generation,temp2,temp,ancestors;
+	while(cin>>generation)
+	{
+		if(generation==0)
+		break;
+		for(int i=1;i<=generation;i++)
+		{
+			if(i==1)
+			{
+				ancestors=1;
+			}
+			else if(i==2)
+			{
+				ancestors=2;
+				temp=1;
+			}
+			else
+			{
+				temp2=ancestors;
+				ancestors+=temp;
+				temp=temp2;
+			}
+		}
+		cout<<ancestors<<endl;
+	}
+}
