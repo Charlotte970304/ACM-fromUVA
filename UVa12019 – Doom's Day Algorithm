@@ -1,0 +1,60 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+string daytoDate(int month,int day)
+{
+	int date;
+	if(month==1)
+		date=(day+5)%7;
+	if(month==2)
+		date=(day+1)%7;
+	if(month==3)
+		date=(day+1)%7;
+	if(month==4)
+		date=(day+4)%7;
+	if(month==5)
+		date=(day+6)%7;
+	if(month==6)
+		date=(day+2)%7;
+	if(month==7)
+		date=(day+4)%7;
+	if(month==8)
+		date=(day+0)%7;
+	if(month==9)
+		date=(day+3)%7;
+	if(month==10)
+		date=(day+5)%7;
+	if(month==11)
+		date=(day+1)%7;
+	if(month==12)
+		date=(day+3)%7;
+	if(date==0)
+		return "Sunday";
+	if(date==1)
+		return "Monday";
+	if(date==2)
+		return "Tuesday";
+	if(date==3)
+		return "Wednesday";
+	if(date==4)
+		return "Thursday";
+	if(date==5)
+		return "Friday";
+	if(date==6)
+		return "Saturday";
+}
+int main()
+{
+	int tc;
+	
+	cin>>tc;
+	while(tc--)
+	{
+		int M,D;
+		cin>>M>>D;
+		string date;
+		date=daytoDate(M,D);
+		cout<<date<<endl;		
+	}
+}
