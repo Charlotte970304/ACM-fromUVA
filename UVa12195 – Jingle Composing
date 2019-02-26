@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	string staff;
+	while(cin>>staff)
+	{
+		if(staff=="*")
+		break;
+		
+		int measure=0;
+		float beats=0.0;
+		for(int i=0;i<staff.length();i++)
+		{
+			if(staff[i]=='/')
+			{
+				if(beats==1)
+					measure+=1;
+				beats=0;
+			}
+			if(staff[i]=='W')
+				beats+=1.0;
+			if(staff[i]=='H')
+				beats+=0.5;			
+			if(staff[i]=='Q')
+				beats+=0.25;			
+			if(staff[i]=='E')
+				beats+=0.125;			
+			if(staff[i]=='S')
+				beats+=0.0625;			
+			if(staff[i]=='T')
+				beats+=0.03125;			
+			if(staff[i]=='X')
+				beats+=0.015625;
+		}
+		cout<<measure<<endl;
+	}
+}
