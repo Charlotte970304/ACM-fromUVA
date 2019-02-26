@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int row;
+	cin>>row;
+	cout<<"Lumberjacks:"<<endl;
+	while(row--)
+	{
+		int a,b;
+		cin>>a;
+		bool order=true,first=true,ltom=true;
+		for(int i=1;i<10;i++)
+		{
+			cin>>b;
+			if(first)
+			{
+				if(a>b)
+					ltom=false;
+				first=false;
+			}
+			if(a>b&&ltom)
+				order=false;
+			if(a<b&&(!ltom))
+				order=false;
+			a=b;
+		}
+		
+		if(order)
+		cout<<"Ordered"<<endl;
+		else
+		cout<<"Unordered"<<endl;
+	}
+}
