@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int N,a,b,c;
+	cin>>N;
+	while(N--)
+	{
+		bool ok=false;
+		cin>>a>>b>>c;
+		if((a>=b&&a>=c&&b+c>a)||(b>=a&&b>=c&&a+c>b)||(c>=a&&c>=b&&a+b>c))
+				ok=true;
+		if(ok)
+			cout<<"OK"<<endl;
+		else
+			cout<<"Wrong!!"<<endl;
+	}
+}
