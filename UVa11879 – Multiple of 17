@@ -1,0 +1,61 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int stringtoint(string number)
+{
+	int num=0;
+	for(int i=0;i<number.length();i++)
+		num=num*10+(number[i]-48);
+	return num;
+}
+
+int main()
+{
+	string n,temp;
+	
+	while(cin>>n)
+	{
+		if(n=="0")
+			break;
+		long zheng=0,fu=0;
+		int i=0;
+	
+		while(n.length()>0)
+		{
+			if(i==0)
+			{
+				if(n.length()>=8)
+				{
+					zheng+=stringtoint(temp.assign(n,n.length()-8,8));
+					i=1;
+					n=n.assign(n,0,n.length()-8);
+				}
+				else
+				{
+					zheng+=stringtoint(n);
+					break;
+				}
+			}
+			else
+			{
+				if(n.length()>=8)
+				{
+					fu+=stringtoint(temp.assign(n,n.length()-8,8));
+					i=0;
+					n=n.assign(n,0,n.length()-8);
+				}
+				else
+				{
+					fu+=stringtoint(n);
+					break;
+				}
+			}			
+		}
+		if((zheng-fu)%17==0)
+			cout<<1<<endl;
+		else
+			cout<<0<<endl; 
+
+	}
+}
