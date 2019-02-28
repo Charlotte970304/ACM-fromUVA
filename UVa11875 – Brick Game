@@ -1,0 +1,19 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+	int T;
+	cin>>T;
+	for(int i=1;i<=T;i++)
+	{
+		int people;
+		cin>>people;
+		int age[people];
+		for(int j=0;j<people;j++)
+			cin>>age[j];
+		sort(age,age+people);
+		cout<<"Case "<<i<<": "<<age[people/2]<<endl;
+	}
+}
