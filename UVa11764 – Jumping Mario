@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int T;
+	cin>>T;
+	for(int test=1;test<=T;test++)
+	{
+		int wall,height,lastheight,highjump=0,lowjump=0;
+		cin>>wall;
+		cin>>lastheight;
+		for(int jump=1;jump<=wall-1;jump++)
+		{
+			cin>>height;
+			if(height>lastheight)
+				highjump++;
+			if(height<lastheight)
+				lowjump++;
+			lastheight=height;
+		}
+		cout<<"Case "<<test<<": "<<highjump<<" "<<lowjump<<endl;
+	}
+}
