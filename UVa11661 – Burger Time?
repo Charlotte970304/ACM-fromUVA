@@ -1,0 +1,36 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int L;
+	while(cin>>L)
+	{
+		if(L==0)
+			break;
+		int r_index=-1,d_index=-1,distance=2000000;
+		char c;
+		for(int i=0;i<L;i++)
+		{
+			cin>>c;
+			if(c=='Z')
+				distance=0;
+			if(c=='R')
+			{
+				r_index=i;
+				if(d_index!=-1)
+					if(distance>r_index-d_index)
+						distance=r_index-d_index;
+			}
+			if(c=='D')
+			{
+				d_index=i;
+				if(r_index!=-1)
+					if(distance>d_index-r_index)
+						distance=d_index-r_index;
+			}
+		}
+		cout<<distance<<endl;
+	}
+}
