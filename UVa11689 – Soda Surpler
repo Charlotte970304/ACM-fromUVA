@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin>>n;
+	while(n--)
+	{
+		int e,f,c,bottle,drinks=0;
+		cin>>e>>f>>c;
+		bottle=e+f;
+		while(bottle>=c)
+		{
+			drinks+=bottle/c;
+			bottle=bottle/c+bottle%c;
+		}
+		cout<<drinks<<endl;
+	}	
+}
