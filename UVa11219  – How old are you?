@@ -1,0 +1,26 @@
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+
+int main()
+{
+	int tc;
+	cin>>tc;
+	for(int test=1;test<=tc;test++)
+	{
+		int d1,m1,y1,d2,m2,y2;//1==now 2==birth
+		scanf("%2d/%2d/%4d",&d1,&m1,&y1);
+		scanf("%2d/%2d/%4d",&d2,&m2,&y2);
+		if(y2>y1||(y1==y2&&m2>m1)||(y1==y2&&m1==m2&&d2>d1))
+			cout<<"Case #"<<test<<": Invalid birth date"<<endl;
+		else if(y1-y2>131||(y1-y2==131&&m1>m2)||(y1-y2==131&&m1==m2&&d1>=d2))
+			cout<<"Case #"<<test<<": Check birth date"<<endl;
+		else 
+		{
+			if(m1>m2||(m1==m2&&d1>=d2))
+				cout<<"Case #"<<test<<": "<<y1-y2<<endl;
+			else
+				cout<<"Case #"<<test<<": "<<y1-y2-1<<endl;
+		}
+	}
+}
