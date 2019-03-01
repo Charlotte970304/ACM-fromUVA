@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int tc;
+	cin>>tc;
+	while(tc--)
+	{
+		int N,M,number,chance=1;
+		cin>>N>>M;
+		int want[N]={0};
+		for(int i=0;i<M;i++)
+			for(int j=0;j<N;j++)
+			{
+				cin>>number;
+				if(number==1)
+					want[j]++;
+			}
+		for(int j=0;j<N;j++)
+		{
+			if(want[j]>1)
+				chance*=want[j];
+		}
+		cout<<chance<<endl;
+	}
+}
