@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int tc;
+	cin>>tc;
+	while(tc--)
+	{
+		int dot,point,big=0,small=99;
+		cin>>dot;
+		while(dot--)
+		{
+			cin>>point;
+			if(big<point)
+			big=point;
+			if(small>point)
+			small=point;
+		}
+		cout<<(big-small)*2<<endl;
+	}
+}
