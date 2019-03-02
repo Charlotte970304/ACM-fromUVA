@@ -1,0 +1,26 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+using namespace std;
+
+int main()
+{
+	
+	long N;
+	while(cin>>N)
+	{
+		string threebase="";
+		if(N==0)
+			threebase="0";
+		if(N<0)
+			break;
+		
+		while(N>0)
+		{
+			threebase+=(N%3)+48;
+			N/=3;
+		}
+		reverse(threebase.begin(),threebase.end());
+		cout<<threebase<<endl;
+	} 
+}
