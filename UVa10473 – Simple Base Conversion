@@ -1,0 +1,63 @@
+#include<iostream>
+#include<string>
+#include<sstream>
+#include<algorithm>
+using namespace std;
+
+unsigned long long xtod(string number)
+{
+	unsigned long long ans=0,num;
+	for(int i=2;i<number.length();i++)
+	{
+		if(number[i]>57)
+			number[i]-=7;
+		ans=ans*16+(number[i]-48);
+	}
+	return ans;
+}
+
+string dtox(int number)
+{
+	string ans="";
+	int num;
+	while(number>0)
+	{
+		num=number%16;
+		if(num>=10)
+			num+=7;
+		ans+=(char)(num+48);
+		number/=16;
+	}
+	reverse(ans.begin(),ans.end());
+	return ans;
+}
+
+int main()
+{
+	string number;
+	while(cin>>number)
+	{
+		if(number[0]=='-')
+		break;
+		stringstream ss;
+		ss.str("");
+		ss.clear();
+		
+		if(number[0]=='0'&&number[1]=='x')
+		{
+			unsigned long long num;
+			num=xtod(number);
+			cout<<num<<endl;
+		}
+		else
+		{
+			int num;
+			string Num;
+			ss<<number;
+			ss>>num;
+			Num=dtox(num);
+			
+			cout<<"0x"<<Num<<endl;
+		}
+	}
+} 
