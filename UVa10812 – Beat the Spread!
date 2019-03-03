@@ -1,0 +1,22 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int tc;
+	cin>>tc;
+	while(tc--)
+	{
+		int a,b,sum,diff;
+		cin>>sum>>diff;
+		a=(sum+diff)/2;
+		b=sum-a;
+		if(a<0||b<0||(a+b)!=sum||(abs(a-b))!=diff)
+		cout<<"impossible"<<endl;
+		else if(a>b)
+		cout<<a<<" "<<b<<endl;
+		else
+		cout<<b<<" "<<a<<endl;
+	}
+}
