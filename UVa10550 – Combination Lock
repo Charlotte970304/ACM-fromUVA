@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a,b,c,d;
+	while(cin>>a>>b>>c>>d)
+	{
+		if(a==0&&b==0&&c==0&&d==0)
+		break;
+		int degree=120;
+		if(a<b)
+			degree+=(40+a-b);
+		if(a>b)//30 0
+			degree+=(a-b);
+		if(b<c)
+			degree+=(c-b);
+		if(b>c)
+			degree+=(40-b+c);
+		if(c<d)
+			degree+=(40+c-d);
+		if(c>d)
+			degree+=(c-d);
+		cout<<degree*9<<endl;
+	}
+}
