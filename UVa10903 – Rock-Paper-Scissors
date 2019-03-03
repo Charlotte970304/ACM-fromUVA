@@ -9,12 +9,12 @@ int main()
 	bool first=true;
 	while(cin>>n)
 	{
-		if(!first)
-			cout<<endl;
 		if(n==0)
 			break;
 		cin>>k;
-
+		if(!first)
+			cout<<endl;
+		first=false;
 		int p1,p2;
 		string m1,m2;
 		float win_low[n+1][2]={0};//0=w,1=l
