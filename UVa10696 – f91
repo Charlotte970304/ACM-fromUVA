@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+long f91(long number)
+{
+	if(number<=100)
+		return f91(f91(number+11));
+	else
+		return number-10;
+}
+
+int main()
+{
+	long N;
+	while(cin>>N)
+	{
+		if(N==0)
+		break;
+		cout<<"f91("<<N<<") = "<<f91(N)<<endl; 
+	}
+}
