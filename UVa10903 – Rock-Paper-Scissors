@@ -6,8 +6,11 @@ using namespace std;
 int main()
 {
 	int n,k;
+	bool first=true;
 	while(cin>>n)
 	{
+		if(!first)
+			cout<<endl;
 		if(n==0)
 			break;
 		cin>>k;
