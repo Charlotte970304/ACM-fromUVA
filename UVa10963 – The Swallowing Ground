@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int tc;
+	bool first=true;
+	cin>>tc;
+	while(tc--)
+	{
+		if(!first)
+			cout<<endl;
+		bool yes=true;
+		int col;
+		cin>>col;
+		int n,s,bridge;
+		cin>>n>>s;
+		bridge=n-s;
+		while(--col)
+		{
+			cin>>n>>s;
+			if(bridge!=n-s)
+			{
+				yes=false;
+			}
+		}
+		if(yes)
+		cout<<"yes"<<endl;
+		else
+		cout<<"no"<<endl;
+		first=false;
+	}
+}
