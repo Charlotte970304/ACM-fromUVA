@@ -1,3 +1,26 @@
+#include<iostream>
+using namespace std;
+
+bool is_prime(int num)
+{
+	int i;
+	if(num==1)
+		return false;
+	else
+	{
+		for(i=2;i<num;i++)
+		{
+			if(num%i==0)
+				return 0;
+		}
+	}
+	return true;
+}
+
+
+
+int main()
+{
 	int tc;
 	cin>>tc;
 	for(int test=1;test<=tc;test++)
@@ -27,3 +50,4 @@
 		else
 			cout<<"Case "<<test<<": "<<ans<<endl;
 	}
+}
