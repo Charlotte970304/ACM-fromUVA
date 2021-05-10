@@ -23,3 +23,7 @@ int main(){
 		cout<<fixed<<setprecision(3)<<angle<<endl;
 	}
 }
+// 360/60=6
+// 360/12/60=0.5
+// 每分鐘分針走的是6度 時針是0.5度
+// iomanip是用來控制輸出格式
