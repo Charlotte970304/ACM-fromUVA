@@ -11,3 +11,4 @@ int main(){
 		cout<<str<<endl;
 	}
 }
+//透過ASCII code發現每個字母都差7
